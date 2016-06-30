@@ -5,10 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
   var mal;
   var notMal;
   var rollValue = 0;
-  var rollOne;
-  var rollTwo;
-  var rollThree;
-  var rollFour;
+
   var rollTotal = 0;
   var rollKorean;
   var turn = 0;
@@ -63,10 +60,10 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   function roll() {
-    rollOne = Math.round(Math.random());
-    rollTwo = Math.round(Math.random());
-    rollThree = Math.round(Math.random());
-    rollFour = Math.round(Math.random());
+    var rollOne = Math.round(Math.random());
+    var rollTwo = Math.round(Math.random());
+    var rollThree = Math.round(Math.random());
+    var rollFour = Math.round(Math.random());
     console.log(rollOne);
     console.log(rollTwo);
     console.log(rollThree);
@@ -106,21 +103,22 @@ document.addEventListener("DOMContentLoaded", function(){
     var nowSpot;
     for (var i=0; i< actualRoute.length; i++){
       if (actualRoute[i].innerText.includes(mal)) {
-        nowSpot = actualRoute[i].parentNode.innerText;
+        nowSpot = actualRoute[i].id;
       }
     }
     for (var i=0; i< allRoutes.secondDiagRoute.length; i++) {
       if (allRoutes.secondDiagRoute[i].innerText.includes(mal)) {
-        nowSpot = allRoutes.secondDiagRoute[i].parentNode.innerText;
+        nowSpot = allRoutes.secondDiagRoute[i].id;
       }
     }
     for (var i=0; i< allRoutes.firstDiagRoute.length; i++) {
       if (allRoutes.firstDiagRoute[i].innerText.includes(mal)) {
-        nowSpot = allRoutes.firstDiagRoute[i].parentNode.innerText;
+        nowSpot = allRoutes.firstDiagRoute[i].id;
       }
     }
 
     var typed = prompt("You rolled " + rollKorean + "! which '" + mal + "' would you like to move? You currently have " + mal + " on " + nowSpot).toUpperCase();
+
 
     // if (allRoutes.stringSecondDiagRoute.includes(typed)){
       for (var i=0; i< allRoutes.secondDiagRoute.length; i++) {

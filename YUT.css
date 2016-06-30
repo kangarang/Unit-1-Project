@@ -171,7 +171,36 @@ body {
   float: left;
   font-size: 40pt;
   font-family: platino;
+}
 
+#firstNum {
+  color: black;
+  min-height: 60px;
+  width: 25%;
+  background: white;
+  border: none;
+  border-radius: none;
+  color: #777;
+  text-align: right;
+  float: right;
+  padding: 0;
+  margin: 0;
+  font-size: 40pt;
+  font-family: platino;
+}
+
+#secNum {
+  color: black;
+  min-height: 60px;
+  width: 25%;
+  background: white;
+  border: none;
+  border-radius: none;
+  color: #777;
+  text-align: left;
+  float: left;
+  font-size: 40pt;
+  font-family: platino;
 }
 
 /**, *:after, *:before {
