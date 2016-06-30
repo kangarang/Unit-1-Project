@@ -1,0 +1,267 @@
+* {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  border: 1px solid black;
+  width: 99%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+  margin-bottom: 1%;
+
+}
+
+.two {
+  display: inline-block;
+  width: 50%;
+  margin-top: 1%;
+
+}
+
+.twoRight {
+  display: inline-block;
+  width: 50%;
+  float: right;
+  margin-top: 1%;
+
+}
+
+.three {
+  display: inline-block;
+  width: 50%;
+  margin-top: 1%;
+  margin-bottom: 0;
+
+}
+
+.threeRight {
+  display: inline-block;
+  width: 50%;
+  float: right;
+  margin-top: 1%;
+  margin-bottom: 0;
+
+}
+
+.five {
+  display: inline-block;
+  width: 50%;
+}
+
+.fiveRight {
+  display: inline-block;
+  width: 50%;
+  float: right;
+}
+.six {
+  display: inline-block;
+  width: 50%;
+  margin-top: 1%;
+}
+.sixRight {
+  display: inline-block;
+  width: 50%;
+  float: right;
+  margin-top: 1%;
+}
+
+.seven {
+  margin-top: 1%;
+  margin-bottom: 0;
+}
+
+.col {
+  margin: 0.5%;
+  position: relative;
+  float: left;
+}
+.left-right {
+  margin-left: 6%;
+}
+.left-RR {
+  margin-left: 23%;
+}
+.right-left {
+  margin-right: 6%;
+}
+.right-LL {
+  margin-right: 23%;
+}
+
+.right-col {
+  float: right;
+}
+
+.col-1-6 {
+  width: 15.5%;
+}
+
+.col-1-4 {
+  width: 31%;
+}
+
+
+body {
+  padding: 20px;
+
+}
+
+.col {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #777;
+  padding: 5px;
+  min-height: 60px;
+  text-align: center;
+}
+
+.four {
+  position: relative;
+  width: 15%;
+  height: 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.center-col {
+  position: relative;
+  top: -200%;
+  margin: 0 auto;
+  padding: 0;
+  width: 65%;
+  min-height: 70px;
+}
+
+#firstBinary {
+  color: black;
+  min-height: 60px;
+  width: 25%;
+  background: white;
+  border: none;
+  border-radius: none;
+  color: #777;
+  text-align: right;
+  float: right;
+  padding: 0;
+  margin: 0;
+  font-size: 40pt;
+  font-family: platino;
+}
+#secBinary {
+  color: black;
+  min-height: 60px;
+  width: 25%;
+  background: white;
+  border: none;
+  border-radius: none;
+  color: #777;
+  text-align: left;
+  float: left;
+  font-size: 40pt;
+  font-family: platino;
+
+}
+
+/**, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}*/
+
+/*[class*='col-'] {
+  padding-right: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}*/
+
+
+/*.site-wrapper {
+  border: 1px solid black;
+  width: 90%;
+  height: 80%;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  height: 16.6%;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+}
+
+.col {
+  height: 95%;
+  width: 16%;
+  border: 1px solid black;
+  border-radius: 10%;
+  text-align: center;
+  font-family: Arial;
+  font-size: 30pt;
+}*/
+
+
+
+
+/**/
+p {
+  margin: 1% auto;
+  font-size: 18pt;
+  color: red;
+}
+
+#TITLE {
+  color: black;
+  font-size: 20pt;
+}
+
+.scores {
+  border: 1px solid black;
+  margin: 8px auto;
+  width: 99%;
+  height: 6%;
+  display: flex;
+  align-items: center;
+  font-size: 20pt;
+}
+
+
+.MalDIV{
+  text-align: right;
+}
+
+.Mal{
+  position: relative;
+  text-align: center;
+  padding-right: 1%;
+  width: 50px;
+  height: 100%;
+  font-size: 100%;
+  color: red;
+  padding: 0 1%;
+}
+
+.gameTitle {
+  padding-left: 1%;
+}
