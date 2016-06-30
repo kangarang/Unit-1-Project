@@ -151,7 +151,6 @@ body {
   background: white;
   border: none;
   border-radius: none;
-  color: #777;
   text-align: right;
   float: right;
   padding: 0;
@@ -166,7 +165,6 @@ body {
   background: white;
   border: none;
   border-radius: none;
-  color: #777;
   text-align: left;
   float: left;
   font-size: 40pt;
@@ -180,13 +178,13 @@ body {
   background: white;
   border: none;
   border-radius: none;
-  color: #777;
-  text-align: right;
+  text-align: center;
   float: right;
   padding: 0;
   margin: 0;
-  font-size: 40pt;
+  font-size: 100%;
   font-family: platino;
+  vertical-align: middle;
 }
 
 #secNum {
@@ -196,10 +194,9 @@ body {
   background: white;
   border: none;
   border-radius: none;
-  color: #777;
-  text-align: left;
+  text-align: center;
   float: left;
-  font-size: 40pt;
+  font-size: 100%;
   font-family: platino;
 }
 
@@ -260,10 +257,7 @@ p {
   color: red;
 }
 
-#TITLE {
-  color: black;
-  font-size: 20pt;
-}
+
 
 .scores {
   border: 1px solid black;
@@ -293,4 +287,9 @@ p {
 
 .gameTitle {
   padding-left: 1%;
+}
+#TITLE {
+  color: black;
+  font-size: 20pt;
+  font-family: platino;
 }

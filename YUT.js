@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
   function chooseMalAndRoute() {
     turn ++;
-    console.log("turn : " + turn);
     if (turn%2 === 0){
       mal = "X";
       notMal = "O"
@@ -55,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function(){
       actualStringRoute = allRoutes.strFullORoute;
       notRoute = allRoutes.fullRoute;
     }
-    console.log("mal is : " + mal + ". Click to roll!");
+    firstNum.innerText = "Player: " + mal + "'s turn";
+
     button.addEventListener("click", roll);
   }
 
@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function(){
     firstBinary.innerText = rollOne + "" + rollTwo;
     secBinary.innerText = rollThree + "" + rollFour;
     rollValue = rollOne + rollTwo + rollThree + rollFour;
+    secNum.innerText = "Roll Value: " + rollValue;
 
     if (rollValue === 1) {
       rollTotal = 1;
@@ -117,119 +118,117 @@ document.addEventListener("DOMContentLoaded", function(){
       }
     }
 
-    var typed = prompt("You rolled " + rollKorean + "! which '" + mal + "' would you like to move? You currently have " + mal + " on " + nowSpot).toUpperCase();
+    var typed = prompt("You rolled a "+rollTotal+ ", or " + rollKorean + "! Which " + mal + " do you want to move? (Type '" + nowSpot + "')").toUpperCase();
 
-
-    // if (allRoutes.stringSecondDiagRoute.includes(typed)){
-      for (var i=0; i< allRoutes.secondDiagRoute.length; i++) {
-        if (allRoutes.secondDiagRoute[i].innerText === mal && typed === allRoutes.stringSecondDiagRoute[i]) {
-          oldIndex = i;
-          oldDOMSpot = allRoutes.secondDiagRoute[i];
-          newIndex = i + rollTotal;
-          if (newIndex > allRoutes.stringSecondDiagRoute.indexOf("Home")) {
-            console.log(mal + " WINS!");
-            actualRoute[0].innerText = mal;
-            oldDOMSpot.innerText = "";
-            return overMessage();
-          }
-          newDOMSpot = allRoutes.secondDiagRoute[newIndex];
-          newDOMSpot.innerText = mal;
+    for (var i=0; i< allRoutes.secondDiagRoute.length; i++) {
+      if (allRoutes.secondDiagRoute[i].innerText === mal && typed === allRoutes.stringSecondDiagRoute[i]) {
+        oldIndex = i;
+        oldDOMSpot = allRoutes.secondDiagRoute[i];
+        newIndex = i + rollTotal;
+        if (newIndex > allRoutes.stringSecondDiagRoute.indexOf("Home")) {
+          console.log(mal + " WINS!");
+          actualRoute[0].innerText = mal;
           oldDOMSpot.innerText = "";
-          chooseMalAndRoute()
+          return overMessage();
+        }
+        newDOMSpot = allRoutes.secondDiagRoute[newIndex];
+        newDOMSpot.innerText = mal;
+        oldDOMSpot.innerText = "";
+        chooseMalAndRoute()
+      }
+    }
+
+    for (var i = 0; i < actualRoute.length; i++) {
+      if (actualRoute[i].innerText === mal && typed === actualStringRoute[i]) {
+        oldIndex = i;
+        oldDOMSpot = actualRoute[i];
+
+        if (oldDOMSpot === MO) {
+          return firstCornerSpot();
+        }
+
+        newIndex = i + rollTotal;
+
+        if (newIndex > actualStringRoute.indexOf("Home")) {
+          console.log(mal + " WINS!");
+          actualRoute[0].innerText = mal;
+          oldDOMSpot.innerText = "";
+          return overMessage();
+        }
+
+        newDOMSpot = actualRoute[newIndex];
+
+        if (newDOMSpot.innerText === notMal){
+          notRoute[0].innerText = notMal;
+        }
+
+        newDOMSpot.innerText = mal;
+        oldDOMSpot.innerText = "";
+
+        chooseMalAndRoute();
         }
       }
-    // }
 
-    // if (actualStringRoute.includes(typed)){
-      for (var i = 0; i < actualRoute.length; i++) {
-        if (actualRoute[i].innerText === mal && typed === actualStringRoute[i]) {
-          oldIndex = i;
-          oldDOMSpot = actualRoute[i];
-
-          if (oldDOMSpot === MO) {
-            return firstCornerSpot();
-          }
-
-          newIndex = i + rollTotal;
-
-          if (newIndex > actualStringRoute.indexOf("Home")) {
-            console.log(mal + " WINS!");
-            actualRoute[0].innerText = mal;
-            oldDOMSpot.innerText = "";
-            return overMessage();
-          }
-
-          newDOMSpot = actualRoute[newIndex];
-
-          if (newDOMSpot.innerText === notMal){
-            notRoute[0].innerText = notMal;
-          }
-
-          newDOMSpot.innerText = mal;
-          oldDOMSpot.innerText = "";
-
-          chooseMalAndRoute();
-        }
-      }
-    // }
-
-    // if (allRoutes.stringFirstDiagRoute.includes(typed)) {
       for (var i = 0; i < allRoutes.firstDiagRoute.length; i++ ) {
         if (allRoutes.firstDiagRoute[i].innerText === mal && typed === allRoutes.stringFirstDiagRoute[i]) {
           oldIndex = i;
           oldDOMSpot = allRoutes.firstDiagRoute[i];
+
           if (oldDOMSpot === YS2){
             shortestRoute();
           }
           newIndex = i + rollTotal;
+
           if (newIndex > allRoutes.stringFirstDiagRoute.indexOf("Home")) {
             console.log(mal + " WINS!");
             actualRoute[0].innerText = mal;
             oldDOMSpot.innerText = "";
             return overMessage();
           }
+
           newDOMSpot = allRoutes.firstDiagRoute[newIndex];
           newDOMSpot.innerText = mal;
           oldDOMSpot.innerText = "";
-          chooseMalAndRoute()
+          chooseMalAndRoute();
         }
       }
-    // }
-  }
-
-  function firstCornerSpot() {
-    newIndex = rollTotal;
-
-    newDOMSpot = allRoutes.firstDiagRoute[newIndex];
-    if (newDOMSpot.innerText === notMal){
-      notRoute[0].innerText = notMal;
     }
-    newDOMSpot.innerText = mal;
+
+function firstCornerSpot() {
+  newIndex = rollTotal;
+
+  newDOMSpot = allRoutes.firstDiagRoute[newIndex];
+  if (newDOMSpot.innerText === notMal){
+    notRoute[0].innerText = notMal;
+  }
+  newDOMSpot.innerText = mal;
+  oldDOMSpot.innerText = "";
+  chooseMalAndRoute();
+}
+
+function shortestRoute() {
+  newIndex = rollTotal;
+  if (newIndex > allRoutes.shortestRoute.indexOf("Home")) {
+    console.log(mal + " WINS!");
+    actualRoute[0].innerText = mal;
     oldDOMSpot.innerText = "";
-    chooseMalAndRoute();
+    return overMessage();
   }
+  newDOMSpot = allRoutes.shortestRoute[newIndex];
+  if (newDOMSpot.innerText === notMal){
+    notRoute[0].innerText = notMal;
+  }
+  newDOMSpot.innerText = mal;
+  oldDOMSpot.innerText = "";
+  chooseMalAndRoute()
+}
 
-  function shortestRoute() {
-    newIndex = rollTotal;
-    if (newIndex > allRoutes.shortestRoute.indexOf("Home")) {
-      console.log(mal + " WINS!");
-      actualRoute[0].innerText = mal;
-      oldDOMSpot.innerText = "";
-      return overMessage();
-    }
-    newDOMSpot = allRoutes.shortestRoute[newIndex];
-    if (newDOMSpot.innerText === notMal){
-      notRoute[0].innerText = notMal;
-    }
-    newDOMSpot.innerText = mal;
-    oldDOMSpot.innerText = "";
-    chooseMalAndRoute()
-  }
-
-  function overMessage(){
-    alert (mal + " WON!")
-    wins ++;
-  }
+function overMessage(){
+  alert (mal + " WON!")
+  wins ++;
+  HOME.innerText = "";
+  actualRoute[0].innerText = mal;
+}
 
 
 
