@@ -272,6 +272,11 @@ body {
   left: 3%;
 }
 
+button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .rrr {
   position: relative;
   right: 3%;
