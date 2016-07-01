@@ -192,7 +192,7 @@ body {
   text-align: center;
   float: right;
   position: relative;
-  right: 2%;
+  right: 3%;
   padding: 0;
   margin: 0;
   font-size: 100%;
@@ -209,8 +209,8 @@ body {
   border: none;
   border-radius: none;
   position: relative;
-  left: 2%;
-  text-align: center;
+  left: 3%;
+  text-align: left;
   float: left;
   font-weight: bold;
   font-size: 100%;
