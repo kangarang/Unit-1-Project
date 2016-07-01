@@ -1,11 +1,12 @@
 * {
   width: 100%;
+
   box-sizing: border-box;
 }
 
 .container {
   border: 1px solid black;
-  width: 99%;
+  width: 60%;
   height: 80%;
   margin: 0 auto;
   font-size: 150%;
@@ -150,7 +151,7 @@ body {
   margin: 0 auto;
   padding: 0;
   width: 75%;
-  min-height: 120px;
+  height: 120%;
   background-color: #FFDC00;
 
 }
@@ -346,7 +347,7 @@ p {
 .scores {
   border: 1px solid black;
   margin: 8px auto;
-  width: 99%;
+  width: 60%;
   height: 6%;
   display: flex;
   align-items: center;
