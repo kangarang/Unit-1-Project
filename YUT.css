@@ -1,15 +1,15 @@
 * {
   width: 100%;
-
+  height: 100%;
   box-sizing: border-box;
 }
 
 .container {
   border: 1px solid black;
-  width: 60%;
-  height: 80%;
+  width: 70%;
+  height: 90%;
   margin: 0 auto;
-  font-size: 150%;
+  font-size: 100%;
   /*color: #fff;
   font-family: helvetica, arial, sans-serif;
   font-size: 2em;
@@ -24,40 +24,36 @@
 }
 
 .row {
-  margin-bottom: 1%;
-
+  margin-bottom: 0.5%;
+  height: 14.8%;
 }
 
 .two {
   display: inline-block;
   width: 50%;
-  margin-top: 1%;
-
+  margin-top: 0.5%;
 }
 
 .twoRight {
   display: inline-block;
   width: 50%;
   float: right;
-  margin-top: 1%;
-
+  margin-top: 0.5%;
 }
 
 .three {
   display: inline-block;
   width: 50%;
-  margin-top: 1%;
+  margin-top: 0.5%;
   margin-bottom: 0;
-
 }
 
 .threeRight {
   display: inline-block;
   width: 50%;
   float: right;
-  margin-top: 1%;
+  margin-top: 0.5%;
   margin-bottom: 0;
-
 }
 
 .five {
@@ -73,17 +69,17 @@
 .six {
   display: inline-block;
   width: 50%;
-  margin-top: 1%;
+  margin-top: 0.5%;
 }
 .sixRight {
   display: inline-block;
   width: 50%;
   float: right;
-  margin-top: 1%;
+  margin-top: 0.5%;
 }
 
 .seven {
-  margin-top: 1%;
+  margin-top: 0.5%;
   margin-bottom: 0;
   vertical-align: bottom;
 }
@@ -94,16 +90,16 @@
   float: left;
 }
 .left-right {
-  margin-left: 9%;
+  margin-left: 8%;
 }
 .left-RR {
-  margin-left: 30%;
+  margin-left: 29%;
 }
 .right-left {
-  margin-right: 9%;
+  margin-right: 8%;
 }
 .right-LL {
-  margin-right: 30%;
+  margin-right: 29%;
 }
 
 .right-col {
@@ -130,11 +126,9 @@ body {
   border-radius: 4px;
   color: black;
   padding: 5px;
-  min-height: 120px;
+  height: 90%;
   text-align: center;
 }
-
-
 
 .four {
   position: relative;
@@ -147,18 +141,17 @@ body {
 
 .center-col {
   position: relative;
-  top: -60px;
+  top: -230%;
   margin: 0 auto;
   padding: 0;
-  width: 75%;
-  height: 120%;
+  width: 85%;
+  height: 500%;
   background-color: #FFDC00;
 
 }
 
 #firstBinary {
   color: black;
-  min-height: 60px;
   width: 25%;
   background: white;
   border: none;
@@ -167,43 +160,42 @@ body {
   float: right;
   padding: 0;
   margin: 0;
-  font-size: 50pt;
+  font-size: 400%;
   font-family: platino;
 }
 #secBinary {
   color: black;
-  min-height: 60px;
   width: 25%;
   background: white;
   border: none;
   border-radius: none;
   text-align: left;
   float: left;
-  font-size: 50pt;
+  font-size: 400%;
   font-family: platino;
 }
 
 #firstNum {
   color: red;
-  min-height: 30px;
   width: 25%;
+  height: 50%;
   background: white;
   border: none;
   border-radius: none;
   text-align: center;
   float: right;
   position: relative;
-  right: 4%;
+  right: 2%;
   padding: 0;
   margin: 0;
-  font-size: 110%;
+  font-size: 120%;
   font-weight: bold;
   font-family: platino;
   vertical-align: middle;
 }
 #firstNumm {
   color: red;
-  min-height: 30px;
+  height: 50%;
   width: 25%;
   background: white;
   border: none;
@@ -211,10 +203,10 @@ body {
   text-align: center;
   float: right;
   position: relative;
-  right: 4%;
+  right: 2%;
   padding: 0;
   margin: 0;
-  font-size: 110%;
+  font-size: 120%;
   font-weight: bold;
   font-family: platino;
   vertical-align: middle;
@@ -222,23 +214,23 @@ body {
 
 #secNum {
   color: red;
-  min-height: 60px;
   width: 25%;
+  height: 100%
   background: white;
   border: none;
   border-radius: none;
   position: relative;
-  left: 5%;
+  left: 3%;
   text-align: left;
   float: left;
   font-weight: bold;
-  font-size: 250%;
+  font-size: 200%;
   font-family: platino;
 }
 .CASA {
   background-color: #3D9970;
   color: black;
-  font-size: 170%;
+  font-size: 100%;
 }
 
 .corner {
@@ -246,11 +238,12 @@ body {
 }
 
 .sml {
-  min-height: 90px;
+  height: 90%;
   justify-content: center;
   vertical-align: middle;
   background-color: #DDDDDD;
 }
+
 
 .thirdb {
   background-color: #DDDDDD;
@@ -259,80 +252,38 @@ body {
 
 .bot {
   position: relative;;
-  top: 15px;
+  top: 6%;
+  height: 78%;
+  width: 14.6%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 .topo {
   position: relative;
-  top: 15px;
+  top: 6%;
+  height: 78%;
+  width: 14.6%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 .leftt {
   position: relative;
   width: 27%;
-  left: 3%;
+  left: 2.5%;
 }
 
 button {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 .rrr {
   position: relative;
-  right: 3%;
-}
-/**, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  right: 2.5%;
 }
 
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}*/
-
-/*[class*='col-'] {
-  padding-right: 20px;
-}
-[class*='col-']:last-of-type {
-  padding-right: 0;
-}*/
-
-
-/*.site-wrapper {
-  border: 1px solid black;
-  width: 90%;
-  height: 80%;
-  padding: 20px;
-  margin: 0 auto;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  height: 16.6%;
-  width: 100%;
-  margin: auto;
-  align-items: center;
-}
-
-.col {
-  height: 95%;
-  width: 16%;
-  border: 1px solid black;
-  border-radius: 10%;
-  text-align: center;
-  font-family: Arial;
-  font-size: 30pt;
-}*/
-
-
-
-
-/**/
 p {
   margin: 1% auto;
   font-size: 140%;
@@ -346,12 +297,14 @@ p {
 
 .scores {
   border: 1px solid black;
-  margin: 8px auto;
-  width: 60%;
-  height: 6%;
+  margin: 1% auto;
+  width: 70%;
+  height: 8%;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;;
   align-items: center;
-  font-size: 20pt;
+  font-size: 150%;
 }
 
 
@@ -361,12 +314,11 @@ p {
 }
 
 .Mal{
-  position: relative;
   text-align: center;
   padding-right: 1%;
-  width: 50px;
+  width: 10%;
   height: 100%;
-  font-size: 130%;
+  font-size: 120%;
   font-weight: bolder;
   font-family: platino;
   color: red;
@@ -374,12 +326,13 @@ p {
   padding-left: 0.5%;
 }
 
-.gameTitle {
-  padding-left: 1%;
-}
+
 #TITLE {
   color: black;
-  font-size: 20pt;
+  font-size: 100%;
   font-family: platino;
   text-align: center;
+  width: 100%;
+  padding-left: 1%;
+  padding-right: 2%;
 }
