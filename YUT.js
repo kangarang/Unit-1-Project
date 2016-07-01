@@ -66,7 +66,7 @@ myClick()
     firstNum.innerText = "Mal: " + mal;
     secNum.innerText = "";
 
-    firstNumm.innerText = "Roll value: "
+    firstNumm.innerText = "Roll Value: "
     button.addEventListener("click", roll);
 
   }
@@ -119,7 +119,7 @@ myClick()
       // roll()
     }
     secNum.innerText = rollKorean;
-    firstNumm.innerText = "Roll value: " + rollTotal
+    firstNumm.innerText = "Roll Value: " + rollTotal
 
     // moveMal();
     moveButt.addEventListener("click", movMal)
