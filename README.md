@@ -11,10 +11,13 @@ Friday June 1, 2016
 
 ##Technology used
 - Vanilla Javascript
+  - recursive loops, DOM manipulation, event-listening
 - HTML
 - CSS
+  - grid, flexbox
 
 ##Resources
+- WDI Instructors
 - Google
 - Stack Overflow
 - Student peers
@@ -22,7 +25,7 @@ Friday June 1, 2016
 
 
 ##Yut Nori
-Traditionally played on Korean holidays, Yut Nori is a simple game where the players try to advance to the end of the board. Four sticks are thrown as dice with either 0 or 1 value. The sum of the rolls is the total value that the player advances on the board. A total roll of 0 however equals a total value of 5. If a player rolls of 4 or a 5, they get to roll again (and again, until they don't roll a 4 or a 5). The sum of the *entire roll sequence* is now the new total roll. If the boardgame pieces (Mal) land on the two special corner spots on the board, they must take the shortcut towards the center of the board. If a Mal happens to land on their opponent's Mal, then the former gets to roll again and the latter must start from the beginning. This is where it gets interesting. If the player who is about to move his/her Mal have rolled more than once (after rolling 4 or 5 on their first), they may choose which roll to use first before moving their Mal, giving the player tremendous positional advantage. Additionally, if the player has at least 1 Mal on the board, they may choose which Mal to move (usually there are more than 1 Mal per team). Furthermore, if a player chooses to stack their Mal together, they may not be "eaten" by opponents unless the opponents themselves have stack their Mal.
+Traditionally played on Korean holidays, Yut Nori is a simple game where the players try to advance to the end of the board. Four sticks are thrown as dice with either 0 or 1 value. The sum of the rolls is the total value that the player advances on the board. A total roll of 0 however equals a total value of 5. If a player rolls of 4 or a 5, they get to roll again (and again, until they don't roll a 4 or a 5). The sum of the *entire roll sequence* is now the new total roll. If the boardgame pieces (Mal) land on the two special corner spots on the board, they must take the shortcut towards the center of the board. This is where it gets interesting. If a player has rolled more than once in one turn (after rolling 4 or 5 on their first roll), they may choose which roll to use first *before* moving their Mal, giving the player tremendous positional advantage. If a Mal happens to land on their opponent's Mal, then the former gets to roll again and the latter must start from the beginning. Additionally, if the player has at least 1 Mal on the board, they may choose which Mal to move (usually there are more than 1 Mal per team). Furthermore, if a player chooses to stack their Mal together, they may not be "eaten" by opponents unless the opponents themselves have stack their Mal.
 
 
 ##Mook Jji Ppa
