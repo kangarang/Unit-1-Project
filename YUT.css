@@ -184,7 +184,7 @@ body {
 
 #firstNum {
   color: red;
-  min-height: 60px;
+  min-height: 30px;
   width: 25%;
   background: white;
   border: none;
@@ -192,10 +192,28 @@ body {
   text-align: center;
   float: right;
   position: relative;
-  right: 3%;
+  right: 4%;
   padding: 0;
   margin: 0;
-  font-size: 100%;
+  font-size: 110%;
+  font-weight: bold;
+  font-family: platino;
+  vertical-align: middle;
+}
+#firstNumm {
+  color: red;
+  min-height: 30px;
+  width: 25%;
+  background: white;
+  border: none;
+  border-radius: none;
+  text-align: center;
+  float: right;
+  position: relative;
+  right: 4%;
+  padding: 0;
+  margin: 0;
+  font-size: 110%;
   font-weight: bold;
   font-family: platino;
   vertical-align: middle;
@@ -209,11 +227,11 @@ body {
   border: none;
   border-radius: none;
   position: relative;
-  left: 3%;
+  left: 5%;
   text-align: left;
   float: left;
   font-weight: bold;
-  font-size: 100%;
+  font-size: 250%;
   font-family: platino;
 }
 .CASA {

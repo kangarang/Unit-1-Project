@@ -63,8 +63,10 @@ myClick()
       actualStringRoute = allRoutes.strFullORoute;
       notRoute = allRoutes.fullRoute;
     }
-    firstNum.innerText = "Player: " + mal;
-    secNum.innerText = "Roll total: "
+    firstNum.innerText = "Mal: " + mal;
+    secNum.innerText = "";
+
+    firstNumm.innerText = "Roll value: "
     button.addEventListener("click", roll);
 
   }
@@ -104,20 +106,20 @@ myClick()
       console.log("You rolled Gae!");
     } else if (rollValue === 3) {
       rollTotal = 3;
-      rollKorean = "Geol"
+      rollKorean = "Geol!"
       console.log("You rolled Geol!");
     } else if (rollValue === 4) {
       rollTotal = 4;
-      rollKorean = "Yut"
+      rollKorean = "Yut!!"
       console.log("You rolled Yut!");
     } else if (rollValue === 0) {
       rollTotal = 5;
-      rollKorean = "Mo"
+      rollKorean = "Mo!!!"
       console.log("Your rolled Mo!");
       // roll()
     }
-    console.log("roll Total = " + rollTotal);
-    secNum.innerText = "Roll total: " + rollTotal;
+    secNum.innerText = rollKorean;
+    firstNumm.innerText = "Roll value: " + rollTotal
 
     // moveMal();
     moveButt.addEventListener("click", movMal)
