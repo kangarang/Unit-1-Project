@@ -1,7 +1,5 @@
 # Unit-1-Project
-Isaac Kang
-General Assembly NYC WDI Robots
-Friday June 1, 2016
+Isaac Kang | General Assembly NYC WDI Robots | Friday July 1, 2016
 
 ##Links
 - Yut Nori
