@@ -8,6 +8,12 @@
   width: 99%;
   height: 80%;
   margin: 0 auto;
+  font-size: 150%;
+  /*color: #fff;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 2em;
+  font-weight: bold;*/
+
 }
 
 .row:after {
@@ -78,6 +84,7 @@
 .seven {
   margin-top: 1%;
   margin-bottom: 0;
+  vertical-align: bottom;
 }
 
 .col {
@@ -86,16 +93,16 @@
   float: left;
 }
 .left-right {
-  margin-left: 6%;
+  margin-left: 9%;
 }
 .left-RR {
-  margin-left: 23%;
+  margin-left: 30%;
 }
 .right-left {
-  margin-right: 6%;
+  margin-right: 9%;
 }
 .right-LL {
-  margin-right: 23%;
+  margin-right: 30%;
 }
 
 .right-col {
@@ -107,7 +114,7 @@
 }
 
 .col-1-4 {
-  width: 31%;
+  width: 27%;
 }
 
 
@@ -120,11 +127,13 @@ body {
   background: #eee;
   border: 1px solid #ccc;
   border-radius: 4px;
-  color: #777;
+  color: black;
   padding: 5px;
-  min-height: 60px;
+  min-height: 120px;
   text-align: center;
 }
+
+
 
 .four {
   position: relative;
@@ -137,11 +146,13 @@ body {
 
 .center-col {
   position: relative;
-  top: -200%;
+  top: -60px;
   margin: 0 auto;
   padding: 0;
-  width: 65%;
-  min-height: 70px;
+  width: 75%;
+  min-height: 120px;
+  background-color: #FFDC00;
+
 }
 
 #firstBinary {
@@ -155,7 +166,7 @@ body {
   float: right;
   padding: 0;
   margin: 0;
-  font-size: 40pt;
+  font-size: 50pt;
   font-family: platino;
 }
 #secBinary {
@@ -167,12 +178,12 @@ body {
   border-radius: none;
   text-align: left;
   float: left;
-  font-size: 40pt;
+  font-size: 50pt;
   font-family: platino;
 }
 
 #firstNum {
-  color: black;
+  color: red;
   min-height: 60px;
   width: 25%;
   background: white;
@@ -180,26 +191,73 @@ body {
   border-radius: none;
   text-align: center;
   float: right;
+  position: relative;
+  right: 2%;
   padding: 0;
   margin: 0;
   font-size: 100%;
+  font-weight: bold;
   font-family: platino;
   vertical-align: middle;
 }
 
 #secNum {
-  color: black;
+  color: red;
   min-height: 60px;
   width: 25%;
   background: white;
   border: none;
   border-radius: none;
+  position: relative;
+  left: 2%;
   text-align: center;
   float: left;
+  font-weight: bold;
   font-size: 100%;
   font-family: platino;
 }
+.CASA {
+  background-color: #3D9970;
+  color: black;
+  font-size: 170%;
+}
 
+.corner {
+  background-color: #39CCCC;
+}
+
+.sml {
+  min-height: 90px;
+  justify-content: center;
+  vertical-align: middle;
+  background-color: #DDDDDD;
+}
+
+.thirdb {
+  background-color: #DDDDDD;
+
+}
+
+.bot {
+  position: relative;;
+  top: 15px;
+}
+
+.topo {
+  position: relative;
+  top: 15px;
+}
+
+.leftt {
+  position: relative;
+  width: 27%;
+  left: 3%;
+}
+
+.rrr {
+  position: relative;
+  right: 3%;
+}
 /**, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -253,9 +311,12 @@ body {
 /**/
 p {
   margin: 1% auto;
-  font-size: 18pt;
+  font-size: 140%;
+  font-weight: bolder;
+  font-family: platino;
   color: red;
 }
+
 
 
 
@@ -272,6 +333,7 @@ p {
 
 .MalDIV{
   text-align: right;
+  font-size: 120%;
 }
 
 .Mal{
@@ -280,9 +342,12 @@ p {
   padding-right: 1%;
   width: 50px;
   height: 100%;
-  font-size: 100%;
+  font-size: 130%;
+  font-weight: bolder;
+  font-family: platino;
   color: red;
-  padding: 0 1%;
+  padding-right:1%;
+  padding-left: 0.5%;
 }
 
 .gameTitle {
@@ -292,4 +357,5 @@ p {
   color: black;
   font-size: 20pt;
   font-family: platino;
+  text-align: center;
 }
