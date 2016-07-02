@@ -313,7 +313,7 @@ p {
   border: 1px solid black;
   margin: 1% auto;
   width: 800px;
-  height: 8%;
+  height: 50px;
   display: flex;
   justify-content: space-between;;
   align-items: center;
