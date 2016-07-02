@@ -15,7 +15,7 @@ function start(){
   var rollTotal = 0;
   var rollKorean;
   var click_count = 0;
-
+  var click_count2 = 0;
   var turn = 0;
   var oldIndex;
   var oldDOMSpot;
@@ -40,10 +40,11 @@ function start(){
   allRoutes.shortestRoute = [YS2, YS3, YS4, HOME];
   allRoutes.stringShortestRoute = ["YS2", "YS3", "YS4", "Home"];
 
-  myClick()
   chooseMalAndRoute();
 
   function chooseMalAndRoute() {
+    click_count = 0;
+    click_count2 = 0;
     turn ++;
     if (turn%2 === 0){
       mal = "X";
@@ -66,23 +67,16 @@ function start(){
     firstNum.innerText = "Mal: " + mal;
     secNum.innerText = "";
 
-    firstNumm.innerText = "Roll Value: "
     button.addEventListener("click", roll);
-
   }
 
-  function myClick(event) {
+
+  function roll(event) {
     click_count++;
     if(click_count == 1){
-      moveButt.removeEventListener("click", movMal)
       button.removeEventListener("click", roll)
 
     }
-  }
-
-
-
-  function roll() {
     var rollOne = Math.round(Math.random());
     var rollTwo = Math.round(Math.random());
     var rollThree = Math.round(Math.random());
@@ -119,13 +113,16 @@ function start(){
       // roll()
     }
     secNum.innerText = rollKorean;
-    firstNumm.innerText = "Roll Value: " + rollTotal
 
     // moveMal();
     moveButt.addEventListener("click", movMal)
   }
 
-  function movMal(){
+  function movMal(event){
+    click_count2++;
+    if(click_count2 == 1){
+      moveButt.removeEventListener("click", movMal)
+    }
     for (var i=0; i< allRoutes.secondDiagRoute.length; i++) {
       if (allRoutes.secondDiagRoute[i].innerText.includes(mal) && allRoutes.secondDiagRoute[i].id == allRoutes.stringSecondDiagRoute[i]) {
         oldIndex = i;
