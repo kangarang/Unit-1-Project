@@ -6,12 +6,12 @@
 
 .container {
   border: 1px solid black;
-  width: 70%;
-  height: 90%;
+  width: 800px;
+  height: 520px;
   margin: 0 auto;
   font-size: 100%;
   /*color: #fff;
-  font-family: helvetica, arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 2em;
   font-weight: bold;*/
 
@@ -25,7 +25,7 @@
 
 .row {
   margin-bottom: 0.5%;
-  height: 14.8%;
+  height: 14.9%;
   /*display: inline-block;*/
 }
 
@@ -117,7 +117,7 @@
 
 
 body {
-  padding: 2%;
+  padding: 1%;
 
 }
 
@@ -161,7 +161,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 400%;
-  font-family: platino;
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -175,7 +175,7 @@ body {
   text-align: left;
   float: left;
   font-size: 400%;
-  font-family: platino;
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   align-items: center;
 }
@@ -195,7 +195,7 @@ body {
   margin: 0;
   font-size: 120%;
   font-weight: bold;
-  font-family: platino;
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   align-items: center;
 }
@@ -213,7 +213,7 @@ body {
   margin: 0;
   font-size: 120%;
   font-weight: bold;
-  font-family: platino;
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   align-items: center;
   text-align: left;
@@ -232,7 +232,7 @@ body {
   float: left;
   font-weight: bold;
   font-size: 200%;
-  font-family: platino;
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   align-items: center;
   text-align: left;
@@ -302,7 +302,7 @@ p {
   margin: 1% auto;
   font-size: 200%;
   font-weight: bolder;
-  font-family: platino;
+  font-family: 'Open Sans', sans-serif;
   color: red;
 }
 
@@ -312,7 +312,7 @@ p {
 .scores {
   border: 1px solid black;
   margin: 1% auto;
-  width: 70%;
+  width: 800px;
   height: 8%;
   display: flex;
   justify-content: space-between;;
@@ -338,20 +338,20 @@ p {
   height: 100%;
   font-size: 120%;
   font-weight: bolder;
-  font-family: platino;
+  font-family: 'Open Sans', sans-serif;
   color: red;
   padding-right:1%;
   padding-left: 0.5%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 
 #TITLE {
   color: black;
   font-size: 100%;
-  font-family: platino;
+  font-family: 'Open Sans', sans-serif;
   width: 80%;
   padding-left: 1%;
   padding-right: 1%;

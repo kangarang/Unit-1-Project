@@ -40,7 +40,7 @@ function start(){
   allRoutes.shortestRoute = [YS2, YS3, YS4, HOME];
   allRoutes.stringShortestRoute = ["YS2", "YS3", "YS4", "Home"];
 
-myClick()
+  myClick()
   chooseMalAndRoute();
 
   function chooseMalAndRoute() {
