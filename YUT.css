@@ -317,7 +317,7 @@ p {
 .Mal{
   text-align: center;
   padding-right: 1%;
-  width: 100px;
+  width: 25%;
   height: 100%;
   font-size: 120%;
   font-weight: bolder;
@@ -330,6 +330,19 @@ p {
   align-items: center;
 }
 
+.endMal{
+  text-align: center;
+  padding-right: 1%;
+  width: 25%;
+  height: 100%;
+  font-size: 120%;
+  font-weight: bolder;
+  font-family: 'Open Sans', sans-serif;
+  color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 #TITLE {
   color: black;
