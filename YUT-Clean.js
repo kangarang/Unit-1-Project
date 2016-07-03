@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", Game)
 
 function Game(){
   var button = document.querySelector("#rollButt");
-  var moveButt = document.querySelector("#MOVE");
   var resetButt = document.querySelector("#resetButt");
   var firstBinary = document.querySelector("#firstBinary");
   var secBinary = document.querySelector("#secBinary");
