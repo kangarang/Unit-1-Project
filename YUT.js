@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", start)
 function start(){
   console.log("DOMContentLoaded");
   var button = document.querySelector("button");
-  var moveButt = document.querySelector("#MOVE")
+  var moveButt = document.querySelector("#MOVE");
+  var resetButt = document.querySelector("#resetButt")
   var allRoutes = {};
   var mal;
   var dMal;
@@ -14,8 +15,6 @@ function start(){
   var notRoute;
   var rollTotal = 0;
   var rollKorean;
-  var click_count = 0;
-  var click_count2 = 0;
   var turn = 0;
   var oldIndex;
   var oldDOMSpot;
@@ -26,25 +25,41 @@ function start(){
   var secBinary = document.querySelector("#secBinary");
   var actualRoute;
 
+  function resetGame(){
+    turn = 0;
+    rollTotal = 0;
+    rollValue = 0;
+    for (route in allRoutes) {
+      for (var i=0; i<allRoutes[route].length; i++){
+        allRoutes[route][i].innerText = "";
+      }
+    }
+    MALX.innerText = "X";
+    MALO.innerText = "O";
+    firstBinary.innerText = "";
+    secBinary.innerText = "";
+    chooseMalAndRoute();
+  }
+
   allRoutes.fullRoute = [MALX, DO, GAE, GEOL, YUT, MO, Y6, Y7, Y8, Y9, Y10, Y11, Y12, Y13, Y14, Y15, Y16, Y17, Y18, Y19, HOME];
-  allRoutes.strFullRoute = ["MALX", "DO", "GAE", "GEOL", "YUT", "MO", "Y6", "Y7", "Y8", "Y9", "Y10", "Y11", "Y12", "Y13", "Y14", "Y15", "Y16", "Y17", "Y18", "Y19", "Home"];
+  strFullRoute = ["MALX", "DO", "GAE", "GEOL", "YUT", "MO", "Y6", "Y7", "Y8", "Y9", "Y10", "Y11", "Y12", "Y13", "Y14", "Y15", "Y16", "Y17", "Y18", "Y19", "Home"];
   allRoutes.fullORoute = [MALO, DO, GAE, GEOL, YUT, MO, Y6, Y7, Y8, Y9, Y10, Y11, Y12, Y13, Y14, Y15, Y16, Y17, Y18, Y19, HOME];
-  allRoutes.strFullORoute = ["MALO", "DO", "GAE", "GEOL", "YUT", "MO", "Y6", "Y7", "Y8", "Y9", "Y10", "Y11", "Y12", "Y13", "Y14", "Y15", "Y16", "Y17", "Y18", "Y19", "Home"];
+  strFullORoute = ["MALO", "DO", "GAE", "GEOL", "YUT", "MO", "Y6", "Y7", "Y8", "Y9", "Y10", "Y11", "Y12", "Y13", "Y14", "Y15", "Y16", "Y17", "Y18", "Y19", "Home"];
 
   allRoutes.firstDiagRoute = [MO, YS0, YS1, YS2, YS7, YS8, Y15, Y16, Y17, Y18, Y19, HOME];
-  allRoutes.stringFirstDiagRoute = ["MO","YS0", "YS1", "YS2", "YS7", "YS8", "Y15", "Y16", "Y17", "Y18", "Y19", "Home"];
+  stringFirstDiagRoute = ["MO","YS0", "YS1", "YS2", "YS7", "YS8", "Y15", "Y16", "Y17", "Y18", "Y19", "Home"];
 
   allRoutes.secondDiagRoute = [Y10, YS5, YS6, YS2, YS3, YS4, HOME];
-  allRoutes.stringSecondDiagRoute = ["Y10", "YS5", "YS6", "YS2", "YS3", "YS4", "Home"];
+  stringSecondDiagRoute = ["Y10", "YS5", "YS6", "YS2", "YS3", "YS4", "Home"];
 
   allRoutes.shortestRoute = [YS2, YS3, YS4, HOME];
-  allRoutes.stringShortestRoute = ["YS2", "YS3", "YS4", "Home"];
+  stringShortestRoute = ["YS2", "YS3", "YS4", "Home"];
 
   chooseMalAndRoute();
 
   function chooseMalAndRoute() {
-    click_count = 0;
-    click_count2 = 0;
+    resetButt.addEventListener("click", resetGame);
+
     turn ++;
     if (turn%2 === 0){
       mal = "X";
@@ -52,7 +67,7 @@ function start(){
       notMal = "O"
       notDMal = "OO"
       actualRoute = allRoutes.fullRoute;
-      actualStringRoute = allRoutes.strFullRoute;
+      actualStringRoute = strFullRoute;
       notRoute = allRoutes.fullORoute;
 
     } else {
@@ -61,7 +76,7 @@ function start(){
       notMal = "X"
       notDMal = "XX"
       actualRoute = allRoutes.fullORoute;
-      actualStringRoute = allRoutes.strFullORoute;
+      actualStringRoute = strFullORoute;
       notRoute = allRoutes.fullRoute;
     }
     firstNum.innerText = "Mal: " + mal;
@@ -71,12 +86,8 @@ function start(){
   }
 
 
-  function roll(event) {
-    click_count++;
-    if(click_count == 1){
-      button.removeEventListener("click", roll)
-
-    }
+  function roll() {
+    button.removeEventListener("click", roll)
     var rollOne = Math.round(Math.random());
     var rollTwo = Math.round(Math.random());
     var rollThree = Math.round(Math.random());
@@ -114,24 +125,20 @@ function start(){
     }
     secNum.innerText = rollKorean;
 
-    // moveMal();
     moveButt.addEventListener("click", movMal)
   }
 
-  function movMal(event){
-    click_count2++;
-    if(click_count2 == 1){
+  function movMal(){
       moveButt.removeEventListener("click", movMal)
-    }
     for (var i=0; i< allRoutes.secondDiagRoute.length; i++) {
-      if (allRoutes.secondDiagRoute[i].innerText.includes(mal) && allRoutes.secondDiagRoute[i].id == allRoutes.stringSecondDiagRoute[i]) {
+      if (allRoutes.secondDiagRoute[i].innerText.includes(mal) && allRoutes.secondDiagRoute[i].id == stringSecondDiagRoute[i]) {
         oldIndex = i;
         oldDOMSpot = allRoutes.secondDiagRoute[i];
         newIndex = i + rollTotal;
         if (oldDOMSpot === Y10) {
           newIndex = rollTotal
         }
-        if (newIndex >= allRoutes.stringSecondDiagRoute.indexOf("Home")) {
+        if (newIndex >= stringSecondDiagRoute.indexOf("Home")) {
           console.log(mal + " WINS!");
           actualRoute[0].innerText = mal;
           oldDOMSpot.innerText = "";
@@ -175,7 +182,7 @@ function start(){
     }
 
     for (var i=0; i< allRoutes.firstDiagRoute.length; i++) {
-      if (allRoutes.firstDiagRoute[i].innerText.includes(mal) && allRoutes.stringFirstDiagRoute[i] == allRoutes.firstDiagRoute[i].id) {
+      if (allRoutes.firstDiagRoute[i].innerText.includes(mal) && stringFirstDiagRoute[i] == allRoutes.firstDiagRoute[i].id) {
         oldIndex = i;
         oldDOMSpot = allRoutes.firstDiagRoute[i];
 
@@ -185,7 +192,7 @@ function start(){
         }
         newIndex = i + rollTotal;
 
-        if (newIndex >= allRoutes.stringFirstDiagRoute.indexOf("Home")) {
+        if (newIndex >= stringFirstDiagRoute.indexOf("Home")) {
           console.log(mal + " WINS!");
           actualRoute[0].innerText = mal;
           oldDOMSpot.innerText = "";
@@ -216,7 +223,7 @@ function firstCornerSpot() {
 
 function shortestRoute() {
 
-  if (newIndex >= allRoutes.stringShortestRoute.indexOf("Home")) {
+  if (newIndex >= stringShortestRoute.indexOf("Home")) {
     console.log(mal + " WINS!");
     actualRoute[0].innerText = mal;
     oldDOMSpot.innerText = "";
