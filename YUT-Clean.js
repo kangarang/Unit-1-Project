@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", Game)
-console.log("type Game.chooseMalAndRoute(); to begin playing");
 
 function Game(){
   var button = document.querySelector("#rollButt");
@@ -35,7 +34,6 @@ function Game(){
         }
       }
     }
-    TITLE.innerText = "Yut Nori!";
     ENDX.innerText = "";
     ENDO.innerText = "";
     MALX.innerText = "X";
@@ -46,6 +44,7 @@ function Game(){
   };
 
   function chooseMalAndRoute() {
+    rollTotal = 0;
     resetButt.addEventListener("click", resetGame);
     turn ++;
     if (turn % 2 === 0) {
@@ -87,28 +86,23 @@ function Game(){
     rollValue = rollOne + rollTwo + rollThree + rollFour;
 
     if (rollValue === 1) {
-      rollTotal = 1;
+      rollTotal += 1;
       rollKorean = "Do"
-      console.log("You rolled Do!");
     } else if (rollValue === 2) {
-      rollTotal = 2;
+      rollTotal += 2;
       rollKorean = "Gae"
-      console.log("You rolled Gae!");
     } else if (rollValue === 3) {
-      rollTotal = 3;
+      rollTotal += 3;
       rollKorean = "Geol!"
-      console.log("You rolled Geol!");
     } else if (rollValue === 4) {
-      rollTotal = 4;
+      rollTotal += 4;
       rollKorean = "Yut!!"
-      console.log("You rolled Yut!");
+      button.addEventListener("click", roll);
     } else if (rollValue === 0) {
-      rollTotal = 5;
+      rollTotal += 5;
       rollKorean = "Mo!!!"
-      console.log("You rolled Mo!");
-      // roll()
+      button.addEventListener("click", roll);
     };
-
     secNum.innerText = rollKorean;
     eventHandle();
   };
@@ -120,17 +114,15 @@ function Game(){
           if (all[route][i].innerText === mal) {
             idPre = all[route][i];
             // var malPre = document.getElementById(idPre);
-
           }
-
         } // might have to make EventListeners for each individual div
       }
     }
-    moveButt.addEventListener("click", movMal);
+    idPre.addEventListener("click", movMal);
   }
 
   function movMal() {
-    moveButt.removeEventListener("click", movMal);
+    idPre.removeEventListener("click", movMal);
     if (idPre === YS2 || idPre === Y10 || idPre === YS5 || idPre === YS6 || idPre === YS3 || idPre === YS4) {
       all.actualRoute = all.middleRoute2;
     } else if (idPre === MO || idPre === YS0 || idPre === YS1 || idPre === YS7 || idPre === YS8) {
@@ -143,7 +135,7 @@ function Game(){
     var indexAfterShift = all.actualRoute.indexOf(idPre) + rollTotal;  // this number is the index number of where the dice have positioned us
     // the reason why we need this number is in case the dice take us beyond the final index.
 
-    if (indexAfterShift > all.actualRoute.length-1) {
+    if (indexAfterShift >= all.actualRoute.length -1) {
       return gameOver();
     } else {
       idPost = all.actualRoute[indexAfterShift];
