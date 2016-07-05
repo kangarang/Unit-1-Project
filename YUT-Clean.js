@@ -10,15 +10,17 @@ function Game(){
   var dMal= "XX";
   var notDMal= "OO";
   var notMal= "O";
-  var rollValue = 0;
-  var rollTotal = 0;
+  var rollValue;
+  var rollTotal;
   var turn = 0;
-  var idPre= "";
-  var idPost= "";
-  var wins = 0;
-  all.longRoute = [MALX, DO, GAE, GEOL, YUT, MO, Y6, Y7, Y8, Y9, Y10, Y11, Y12, Y13, Y14, Y15, Y16, Y17, Y18, Y19, HOME, ENDX]
-  all.middleRoute1 = [MO, YS0, YS1, YS2, YS7, YS8, Y15, Y16, Y17, Y18, Y19, HOME, ENDX]
-  all.middleRoute2 = [Y10, YS5, YS6, YS2, YS3, YS4, HOME, ENDX]
+  var idPre;
+  var idPost;
+  var oWins = 0;
+  var xWins = 0;
+  var indexAfterShift;
+  all.longRoute = [MALX, DO, GAE, GEOL, YUT, MO, Y6, Y7, Y8, Y9, Y10, Y11, Y12, Y13, Y14, Y15, Y16, Y17, Y18, Y19, HOME];
+  all.middleRoute1 = [MO, YS0, YS1, YS2, YS7, YS8, Y15, Y16, Y17, Y18, Y19, HOME];
+  all.middleRoute2 = [Y10, YS5, YS6, YS2, YS3, YS4, HOME];
 
   chooseMalAndRoute();
 
@@ -33,10 +35,9 @@ function Game(){
         }
       }
     }
-    ENDX.innerText = "";
-    ENDO.innerText = "";
-    MALX.innerText = "X";
-    MALO.innerText = "O";
+    END.innerText = "";
+    MALX.innerText = "XX";
+    MALO.innerText = "OO";
     firstBinary.innerText = "";
     secBinary.innerText = "";
     chooseMalAndRoute();
@@ -44,26 +45,21 @@ function Game(){
 
   function chooseMalAndRoute() {
     rollTotal = 0;
+    idPre = [];
     resetButt.addEventListener("click", resetGame);
     turn ++;
     if (turn % 2 === 0) {
-      mal = "X";
+      mal = "X"
       dMal = "XX"
       notMal = "O"
       notDMal = "OO"
       all.longRoute[0] = MALX;
-      all.longRoute[all.longRoute.length - 1] = ENDX;
-      all.middleRoute1[all.middleRoute1.length - 1] = ENDX;
-      all.middleRoute2[all.middleRoute2.length - 1] = ENDX;
     } else {
       mal = "O"
       dMal = "OO"
       notMal = "X"
       notDMal = "XX"
       all.longRoute[0] = MALO;
-      all.longRoute[all.longRoute.length - 1] = ENDO;
-      all.middleRoute1[all.middleRoute1.length - 1] = ENDO;
-      all.middleRoute2[all.middleRoute2.length - 1] = ENDO;
     }
     firstNum.innerText = "Mal: " + mal;
     secNum.innerText = "";
@@ -102,62 +98,147 @@ function Game(){
       rollKorean = "Mo!!!"
       button.addEventListener("click", roll);
     };
+
     secNum.innerText = rollKorean;
-    eventHandle();
+
+    findMal();
   };
 
-  function eventHandle(){
+  function findMal() {
     for (var route in all) {
       if (all.hasOwnProperty(route)) {
         for (var i = 0; i < all[route].length; i ++) {
-          if (all[route][i].innerText === mal) {
-            idPre = all[route][i];
+          if (all[route][i].innerText === mal || all[route][i].innerText === dMal) {
+            idPre.push(all[route][i]);
             // var malPre = document.getElementById(idPre);
           }
         } // might have to make EventListeners for each individual div
       }
+    };
+
+    idPre[0].addEventListener("click", idMalOne);
+    if (idPre[1]){
+      idPre[1].addEventListener("click", idMalTwo);
+    };
+
+  };
+
+
+  function idMalOne() {
+    idPre[0].removeEventListener("click", idMalOne);
+    if (idPre[1]) {
+      idPre[1].removeEventListener("click", idMalTwo);
     }
-    idPre.addEventListener("click", movMal);
-  }
+    idPre = idPre[0];
+    movMal();
+  };
+
+  function idMalTwo() {
+    idPre[0].removeEventListener("click", idMalOne);
+    idPre[1].removeEventListener("click", idMalTwo);
+    idPre = idPre[1];
+    movMal();
+  };
+
 
   function movMal() {
-    idPre.removeEventListener("click", movMal);
     if (idPre === YS2 || idPre === Y10 || idPre === YS5 || idPre === YS6 || idPre === YS3 || idPre === YS4) {
       all.actualRoute = all.middleRoute2;
     } else if (idPre === MO || idPre === YS0 || idPre === YS1 || idPre === YS7 || idPre === YS8) {
       all.actualRoute = all.middleRoute1;
     } else {
       all.actualRoute = all.longRoute;
-    }
-
+    };
     // take the initial location (idPre), add the rollTotal, get the final location.
-    var indexAfterShift = all.actualRoute.indexOf(idPre) + rollTotal;  // this number is the index number of where the dice have positioned us
+    indexAfterShift = all.actualRoute.indexOf(idPre) + rollTotal;  // this number is the index number of where the dice have positioned us
     // the reason why we need this number is in case the dice take us beyond the final index.
 
-    if (indexAfterShift >= all.actualRoute.length -1) {
-      return gameOver();
+    console.log(all.actualRoute);
+    console.log(indexAfterShift);
+
+
+    if (indexAfterShift > all.actualRoute.indexOf(HOME)) {
+      return firstHome();
     } else {
+
+
       idPost = all.actualRoute[indexAfterShift];
       if (idPost.innerText === notMal) {
         if (mal === "X") {
-          MALO.innerText = "O";
+          MALO.innerText = MALO.innerText + idPost.innerText;
         } else {
-          MALX.innerText = "X";
+          MALX.innerText = MALX.innerText + idPost.innerText
+        };
+        turn--;
+      };
+
+
+
+      if (idPost.innerText === mal) {
+        idPost.innerText = dMal;
+        idPre.innerText = "";
+        return chooseMalAndRoute();
+      } else if (idPost.innerText === notDMal && idPre.innerText === dMal) {
+        if (mal === "X") {
+          MALO.innerText = "OO";
+        } else {
+          MALX.innerText = "XX";
+        };
+        turn--;
+        idPost.innerText = dMal;
+        idPre.innerText = "";
+        return chooseMalAndRoute();
+      } else if (idPost.innerText === notDMal && idPre.innerText === mal) {
+        all.actualRoute[all.actualRoute.indexOf(idPost) - 1].innerText = mal;
+        idPre.innerText = "";
+        return chooseMalAndRoute();
+      };
+
+
+
+      if (idPre === all.longRoute[0]) {
+        idPost.innerText = mal;
+        if (idPre.innerText === mal) {
+          idPre.innerText = "";
+        } else{
+          idPre.innerText = mal;
         }
-      }
-      idPost.innerText = idPre.innerText;
+      } else {
+        idPost.innerText = idPre.innerText;
+        idPre.innerText = "";
+      };
+
+    };
+    chooseMalAndRoute();
+  }
+
+  function firstHome() {
+    if (idPre.innerText === dMal) {
+      END.innerText = END.innerText + mal;
+      return gameOver();
+    }
+
+    if (mal === "X") {
+      xWins ++;
+    } else {
+      oWins ++;
+    }
+
+    if (xWins === 2 || oWins === 2) {
+      return gameOver();
+    } else {
       idPre.innerText = "";
-      // idPre.innerText.split(mal);
+      END.innerText = END.innerText + mal;
       chooseMalAndRoute();
     }
-  };
+
+  }
 
   function gameOver() {
+    END.innerText = END.innerText + mal;
     idPre.innerText = "";
     console.log(mal + " WINS!");
-    all.actualRoute[all.actualRoute.length - 1].innerText = mal;
     alert (mal + " WON!");
-    wins ++;
   };
 
 }; // END
