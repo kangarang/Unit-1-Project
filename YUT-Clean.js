@@ -10,8 +10,8 @@ function Game(){
   var dMal= "XX";
   var notDMal= "OO";
   var notMal= "O";
-  var rollValue;
-  var rollTotal;
+  var rollValue = 0;
+  var rollTotal = 0;
   var turn = 0;
   var idPre;
   var idPost;
@@ -44,9 +44,9 @@ function Game(){
   };
 
   function chooseMalAndRoute() {
+    resetButt.addEventListener("click", resetGame);
     rollTotal = 0;
     idPre = [];
-    resetButt.addEventListener("click", resetGame);
     turn ++;
     if (turn % 2 === 0) {
       mal = "X"
@@ -77,10 +77,12 @@ function Game(){
     var rollKorean;
     firstBinary.innerText = rollOne + "" + rollTwo;
     secBinary.innerText = rollThree + "" + rollFour;
-
     rollValue = rollOne + rollTwo + rollThree + rollFour;
-
-    if (rollValue === 1) {
+    if (rollOne === 1 && rollTwo === 0 && rollThree === 0 && rollFour === 0) {
+      rollValue === -1;
+      rollTotal --;
+      rollKorean = "BACK-DO!"
+    } else if (rollValue === 1) {
       rollTotal += 1;
       rollKorean = "Do"
     } else if (rollValue === 2) {
@@ -170,9 +172,7 @@ function Game(){
           MALX.innerText = MALX.innerText + idPost.innerText
         };
         turn--;
-      };
-
-
+      }
 
       if (idPost.innerText === mal) {
         idPost.innerText = dMal;
@@ -192,21 +192,18 @@ function Game(){
         all.actualRoute[all.actualRoute.indexOf(idPost) - 1].innerText = mal;
         idPre.innerText = "";
         return chooseMalAndRoute();
-      };
-
-
-
-      if (idPre === all.longRoute[0]) {
+      } else if (idPre === all.longRoute[0]) {
         idPost.innerText = mal;
         if (idPre.innerText === mal) {
           idPre.innerText = "";
-        } else{
+        } else {
           idPre.innerText = mal;
         }
-      } else {
-        idPost.innerText = idPre.innerText;
-        idPre.innerText = "";
-      };
+        return chooseMalAndRoute();
+      }
+
+      idPost.innerText = idPre.innerText;
+      idPre.innerText = "";
 
     };
     chooseMalAndRoute();
