@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", Game)
 
-function Game(){
+function Game() {
   var button = document.querySelector("#rollButt");
   var resetButt = document.querySelector("#resetButt");
   var firstBinary = document.querySelector("#firstBinary");
   var secBinary = document.querySelector("#secBinary");
   var all = {};
-  var mal= "X";
-  var dMal= "XX";
-  var notDMal= "OO";
-  var notMal= "O";
+  var mal = "X";
+  var dMal = "XX";
+  var notDMal = "OO";
+  var notMal = "O";
   var rollValue = 0;
   var rollTotal = 0;
   var turn = 0;
@@ -24,13 +24,13 @@ function Game(){
 
   chooseMalAndRoute();
 
-  function resetGame(){
+  function resetGame() {
     turn = 0;
     rollTotal = 0;
     rollValue = 0;
     for (var route in all) {
       if (all.hasOwnProperty(route)) {
-        for (var i=0; i<all[route].length; i++){
+        for (var i = 0; i < all[route].length; i++) {
           all[route][i].innerText = "";
         }
       }
@@ -47,7 +47,7 @@ function Game(){
     resetButt.addEventListener("click", resetGame);
     rollTotal = 0;
     idPre = [];
-    turn ++;
+    turn++;
     if (turn % 2 === 0) {
       mal = "X"
       dMal = "XX"
@@ -80,7 +80,7 @@ function Game(){
     rollValue = rollOne + rollTwo + rollThree + rollFour;
     if (rollOne === 1 && rollTwo === 0 && rollThree === 0 && rollFour === 0) {
       rollValue === -1;
-      rollTotal --;
+      rollTotal--;
       rollKorean = "BACK-DO!"
     } else if (rollValue === 1) {
       rollTotal += 1;
@@ -109,7 +109,7 @@ function Game(){
   function findMal() {
     for (var route in all) {
       if (all.hasOwnProperty(route)) {
-        for (var i = 0; i < all[route].length; i ++) {
+        for (var i = 0; i < all[route].length; i++) {
           if (all[route][i].innerText === mal || all[route][i].innerText === dMal) {
             idPre.push(all[route][i]);
             // var malPre = document.getElementById(idPre);
@@ -119,7 +119,7 @@ function Game(){
     };
 
     idPre[0].addEventListener("click", idMalOne);
-    if (idPre[1]){
+    if (idPre[1]) {
       idPre[1].addEventListener("click", idMalTwo);
     };
 
@@ -152,7 +152,7 @@ function Game(){
       all.actualRoute = all.longRoute;
     };
     // take the initial location (idPre), add the rollTotal, get the final location.
-    indexAfterShift = all.actualRoute.indexOf(idPre) + rollTotal;  // this number is the index number of where the dice have positioned us
+    indexAfterShift = all.actualRoute.indexOf(idPre) + rollTotal; // this number is the index number of where the dice have positioned us
     // the reason why we need this number is in case the dice take us beyond the final index.
 
     console.log(all.actualRoute);
@@ -216,9 +216,9 @@ function Game(){
     }
 
     if (mal === "X") {
-      xWins ++;
+      xWins++;
     } else {
-      oWins ++;
+      oWins++;
     }
 
     if (xWins === 2 || oWins === 2) {
@@ -235,7 +235,7 @@ function Game(){
     END.innerText = END.innerText + mal;
     idPre.innerText = "";
     console.log(mal + " WINS!");
-    alert (mal + " WON!");
+    alert(mal + " WON!");
   };
 
 }; // END
