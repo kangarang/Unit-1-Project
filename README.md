@@ -9,10 +9,8 @@ Isaac Kang | General Assembly NYC WDI Robots | Friday July 1, 2016
 
 ##Technology used
 - Vanilla Javascript
-  - recursive loops, DOM manipulation, event-listening
 - HTML
 - CSS
-  - grid, flexbox
 
 ##Resources
 - WDI Instructors
