@@ -3,7 +3,7 @@ Isaac Kang | General Assembly NYC WDI Robots | Friday July 1, 2016
 
 ##Links
 - Yut Nori
-  - [Traditional holiday game](https://kangarang.github.io/Unit-1-Project/)
+  - [Traditional holiday game](https://kangarang.github.io/p1_yut_fe/)
 - Mook Jji Ppa
   - [Korean Rock-Paper-Scissors](https://kangarang.github.io/MookJP/)
 
