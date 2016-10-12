@@ -194,7 +194,7 @@ body {
   right: 2%;
   padding: 0;
   margin: 0;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   font-family: 'Open Sans', sans-serif;
   display: flex;
@@ -354,4 +354,21 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+#instructions {
+  border: 1px solid black;
+  margin: 1% auto;
+  width: 800px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
+#words {
+    padding-left: 7px;
+    color: black;
+    font-size: 110%;
 }

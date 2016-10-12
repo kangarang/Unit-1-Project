@@ -61,7 +61,7 @@ function Game() {
       notDMal = "XX"
       all.longRoute[0] = MALO;
     }
-    firstNum.innerText = "Mal: " + mal;
+    firstNum.innerText = "Mal's Turn: " + mal;
     secNum.innerText = "";
 
     button.addEventListener("click", roll);
@@ -79,9 +79,11 @@ function Game() {
     secBinary.innerText = rollThree + "" + rollFour;
     rollValue = rollOne + rollTwo + rollThree + rollFour;
     if (rollOne === 1 && rollTwo === 0 && rollThree === 0 && rollFour === 0) {
-      rollValue === -1;
-      rollTotal--;
-      rollKorean = "BACK-DO!"
+      rollTotal += 1;
+      rollKorean = "Do"
+    //   rollValue === -1;
+    //   rollTotal--;
+    //   rollKorean = "BACK-DO!"
     } else if (rollValue === 1) {
       rollTotal += 1;
       rollKorean = "Do"
